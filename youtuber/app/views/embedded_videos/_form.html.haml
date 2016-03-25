@@ -1,0 +1,31 @@
+= form_for(@embedded_video) do |f|
+  - if @embedded_video.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@embedded_video.errors.count, "error")
+        prohibited this embedded_video from being saved:
+      %ul
+        - @embedded_video.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :name
+    %br/
+    = f.text_field :name
+  .field
+    = f.label :video_url
+    %br/
+    = f.text_field :video_url
+  .field
+    = f.label :photo_url
+    %br/
+    = f.text_field :photo_url
+  .field
+    = f.label :color
+    %br/
+    = f.text_field :color
+  .field
+    = f.label :autoplay
+    %br/
+    = f.check_box :autoplay
+  .actions
+    = f.submit

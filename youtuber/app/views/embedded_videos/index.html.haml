@@ -1,0 +1,24 @@
+%p#notice= notice
+%h1 Listing Embedded Videos
+%table
+  %thead
+    %tr
+      %th Name
+      %th Video url
+      %th Photo url
+      %th Color
+      %th Autoplay
+      %th{:colspan => "3"}
+  %tbody
+    - @embedded_videos.each do |embedded_video|
+      %tr
+        %td= embedded_video.name
+        %td= embedded_video.video_url
+        %td= embedded_video.photo_url
+        %td= embedded_video.color
+        %td= embedded_video.autoplay
+        %td= link_to 'Show', embedded_video
+        %td= link_to 'Edit', edit_embedded_video_path(embedded_video)
+        %td= link_to 'Destroy', embedded_video, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Embedded video', new_embedded_video_path

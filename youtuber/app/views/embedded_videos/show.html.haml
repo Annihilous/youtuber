@@ -1,0 +1,19 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @embedded_video.name
+%p
+  %strong Video url:
+  = @embedded_video.video_url
+%p
+  %strong Photo url:
+  = @embedded_video.photo_url
+%p
+  %strong Color:
+  = @embedded_video.color
+%p
+  %strong Autoplay:
+  = @embedded_video.autoplay
+= link_to 'Edit', edit_embedded_video_path(@embedded_video)
+|
+= link_to 'Back', embedded_videos_path
